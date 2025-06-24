@@ -13,6 +13,7 @@ import { WebGLRenderer } from "../renderers/WebGLRenderer.js";
 import { Scene } from "../scenes/Scene.js";
 import { SourceJSON } from "../textures/Source.js";
 import { TextureJSON } from "../textures/Texture.js";
+import { Color } from "../Three.Core.js";
 import { BufferGeometry, BufferGeometryJSON } from "./BufferGeometry.js";
 import { EventDispatcher } from "./EventDispatcher.js";
 import { Layers } from "./Layers.js";
@@ -29,6 +30,13 @@ export interface Object3DJSONObject {
     frustumCulled?: boolean;
     renderOrder?: number;
     userData?: Record<string, unknown>;
+
+    wireframe?: boolean;
+    wireframeLinewidth?: number;
+    wireframeFrontColor?: Color;
+    wireframeBackColor?: Color;
+    wireframeInheritParams?: boolean;
+    lockToCamera?: number;
 
     layers: number;
     matrix: Matrix4Tuple;
@@ -286,6 +294,14 @@ export class Object3D<TEventMap extends Object3DEventMap = Object3DEventMap> ext
      * @defaultValue `undefined`
      */
     customDistanceMaterial?: Material | undefined;
+
+    lockToCamera: number;
+
+    wireframe: boolean;
+    wireframeLinewidth?: number;
+    wireframeFrontColor?: Color;
+    wireframeBackColor?: Color;
+    wireframeInheritParams?: boolean;
 
     /**
      * An optional callback that is executed immediately before a 3D object is rendered to a shadow map.

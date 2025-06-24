@@ -628,4 +628,21 @@ export class Material extends EventDispatcher<{ dispose: {} }> {
      * @default false
      */
     set needsUpdate(value: boolean);
+
+    loadSimple(json: Record<string, any>, prop: string): void;
+    loadColor(json: Record<string, any>, prop: string): void;
+    loadVec(json: Record<string, any>, prop: string): void;
+    loadText(json: Record<string, any>, prop: string, getter: (value: any) => any): void;
+    storeSimple(data: Record<string, any>, prop: string): void;
+    storeColor(data: Record<string, any>, prop: string): void;
+    storeVec(data: Record<string, any>, prop: string): void;
+    storeText(data: Record<string, any>, prop: string, meta: any): void;
+    loadSimples(json: Record<string, any>, props: string[]): void;
+    loadColors(json: Record<string, any>, props: string[]): void;
+    loadVectors(json: Record<string, any>, props: string[]): void;
+    loadTextures(json: Record<string, any>, props: string[], getter: (value: any) => any): void;
+    storeSimples(data: Record<string, any>, props: string[]): void;
+    storeColors(data: Record<string, any>, props: string[]): void;
+    storeVectors(data: Record<string, any>, props: string[]): void;
+    storeTextures(data: Record<string, any>, props: string[], meta: any): void;
 }

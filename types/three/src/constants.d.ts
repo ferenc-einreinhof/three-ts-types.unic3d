@@ -371,6 +371,9 @@ export const RGBFormat: 1022;
 /** {@link RGBAFormat} is the default and reads the red, green, blue and alpha components. */
 export const RGBAFormat: 1023;
 
+export const LuminanceFormat: 1024;
+export const LuminanceAlphaFormat: 1025;
+
 /**
  * {@link DepthFormat} reads each element as a single depth value, converts it to floating point, and clamps to the range `[0,1]`.
  * @remarks This is the default for {@link THREE.DepthTexture}.
@@ -425,6 +428,8 @@ export const RGBAIntegerFormat: 1033;
  */
 export type PixelFormat =
     | typeof AlphaFormat
+    | typeof LuminanceFormat
+    | typeof LuminanceAlphaFormat
     | typeof RGBFormat
     | typeof RGBAFormat
     | typeof DepthFormat
