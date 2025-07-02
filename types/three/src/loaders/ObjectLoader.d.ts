@@ -30,6 +30,7 @@ export class ObjectLoader extends Loader<Object3D> {
         data: unknown,
         geometries: { [key: string]: InstancedBufferGeometry | BufferGeometry },
         materials: { [key: string]: Material },
+        textures: { [key: string]: Texture },
         animations: { [key: string]: AnimationClip },
     ): Object3D;
 }
