@@ -24,6 +24,8 @@ export class Layers {
      */
     mask: number;
 
+    recursive?: boolean | number;
+
     /**
      * Set membership to `layer`, and remove membership all other layers.
      * @param layer An integer from 0 to 31.
