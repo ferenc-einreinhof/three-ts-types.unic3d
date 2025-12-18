@@ -282,4 +282,8 @@ export class Matrix4 {
      * @param offset (optional) offset in the array at which to put the result.
      */
     toArray<TArray extends ArrayLike<number>>(array: TArray, offset?: number): TArray;
+
+    getRow( row: number, target?: Vector3 ): Vector3;
+
+    setRow( row: number, vec: Vector3 ): this;
 }
